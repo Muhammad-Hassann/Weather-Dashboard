@@ -46,7 +46,7 @@ function createWeatherCards(cityName, weatherItem, index) {
 
 // Function for getting weather details
 function getWeatherDetails(cityName, lon, lat) {
-  const WEATHER_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+  const WEATHER_URL = `https:${window.location.protocol === 'https:' ? '' : '//'}api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
   fetch(WEATHER_URL)
     .then((res) => res.json())
